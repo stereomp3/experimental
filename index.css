@@ -1,0 +1,24 @@
+body {
+    padding: 10%;
+    font: 16px Helvetica, Arial;
+    margin: 0;
+    background-color: #EEEEEE;
+}
+
+.maindiv{
+    background-color: #00ADB5;
+    position: fixed;
+    height: 60%;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    color: #393E46;
+}
+
+.maindiv a{
+    position: relative;
+    padding: 50px;
+    font-size: 30px;
+    color: #222831;
+    cursor: pointer;
+}
