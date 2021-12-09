@@ -59,7 +59,7 @@ function print_anwser(){
     
     console.log(identity_matrix(Row)) 
     console.log(get_matrix())
-
+    document.getElementById("showAnwser").innerHTML = ""
     let m = document.querySelectorAll("#showform input")
     let count = 0
     for(let i = 0; i < Row; i++){
@@ -84,7 +84,7 @@ function print_anwser(){
         }
         anwser = matrix_list[matrix_list.length-1][matrix_list[0].length-1] / matrix_list[matrix_list.length-1][matrix_list[0].length-2]
         console.log("z = "+ anwser)
-        document.getElementById("showAnwser").appendChild(document.createTextNode("======================================================"))   
+        document.getElementById("showAnwser").appendChild(document.createTextNode("=========================目標函式========================="))   
         document.getElementById("showAnwser").appendChild(document.createElement("p"))
         document.getElementById("showAnwser").appendChild(document.createTextNode("z = "+anwser))
         document.getElementById("showAnwser").appendChild(document.createElement("p"))
@@ -172,6 +172,18 @@ function find_row(list, column_min){
 }
 
 function gaussian_elimination(list, column_min, row_min){
+    document.getElementById("showAnwser").appendChild(document.createTextNode("======================================================"))
+    document.getElementById("showAnwser").appendChild(document.createElement("p"))
+    document.getElementById("showAnwser").appendChild(document.createTextNode("找最後一行的最小值:  "+column_min))
+    document.getElementById("showAnwser").appendChild(document.createTextNode("， 找最小列那一行的最小值:   "+row_min))
+    document.getElementById("showAnwser").appendChild(document.createElement("p"))
+    document.getElementById("showAnwser").appendChild(document.createTextNode("======================================================"))
+    document.getElementById("showAnwser").appendChild(document.createElement("p"))
+    document.getElementById("showAnwser").appendChild(document.createTextNode("高斯消去"))
+    let newP00 = document.getElementById("showAnwser").appendChild(document.createElement("p"))
+    let list_text = list.join(`<br>`)
+    newP00.innerHTML = list_text
+
     let rm = list[row_min][column_min]
     
     for(let y = 0; y < list[0].length; y++){
@@ -186,16 +198,9 @@ function gaussian_elimination(list, column_min, row_min){
             }
         }
     }
-    document.getElementById("showAnwser").appendChild(document.createTextNode("======================================================"))
-    document.getElementById("showAnwser").appendChild(document.createElement("p"))
-    document.getElementById("showAnwser").appendChild(document.createTextNode("找最後一行的最小值:  "+column_min))
-    document.getElementById("showAnwser").appendChild(document.createTextNode("， 找最小列那一行的最小值:   "+row_min))
-    document.getElementById("showAnwser").appendChild(document.createElement("p"))
-    document.getElementById("showAnwser").appendChild(document.createTextNode("======================================================"))
-    document.getElementById("showAnwser").appendChild(document.createElement("p"))
-    document.getElementById("showAnwser").appendChild(document.createTextNode("高斯消去"))
+
     let newP = document.getElementById("showAnwser").appendChild(document.createElement("p"))
-    let list_text = list.join(`<br>`)
+    list_text = list.join(`<br>`)
     newP.innerHTML = list_text
     document.getElementById("showAnwser").appendChild(document.createTextNode("======================================================"))
     document.getElementById("showAnwser").appendChild(document.createElement("p"))
