@@ -1,9 +1,24 @@
 <html>
   <head>
     <title>SimplexMethod</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../index.css"/>
   </head>
   <body>
-      <h1 style="text-align: center;">SimplexMethod</h1>
+    
+    <h1 style="text-align: center;">SimplexMethod</h1>
+    <form style="float: left; z-index: 99; position: absolute;">  
+      <p>Column</p>
+      <p><input type="number" placeholder="0" min="0" max="10" id="column"></p>
+      <p>Row</p>
+      <p><input type="number" placeholder="0" min="0" max="10" id="row"></p>
+      
+      <p><input type="button" value="Generate" onclick="generate_map()"></p>
+    </form>
+    <form style="text-align: center;" id="showform">  
+    </form>
+    <div style="text-align: center;" id="showAnwser">
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
